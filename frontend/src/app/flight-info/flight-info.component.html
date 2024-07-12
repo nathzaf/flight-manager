@@ -1,0 +1,12 @@
+<div class="grid grid-cols-4 w-full relative">
+  <div class="col-span-3">
+    <app-flight-details [flight]="flight" [isPassed]="isPassed"></app-flight-details>
+  </div>
+  <div class="relative">
+    <div class="p-6 mt-8 mr-4 h-[48rem] bg-gray-800 shadow-lg rounded-lg text-white flex flex-col">
+      <app-booking *ngIf="!isPassed" [flightNumber]="flight.flightNumber"
+                   [pilotUsername]="flight.pilot.username"></app-booking>
+      <app-feedbacks *ngIf="isPassed" [flightNumber]="flight.flightNumber"></app-feedbacks>
+    </div>
+  </div>
+</div>

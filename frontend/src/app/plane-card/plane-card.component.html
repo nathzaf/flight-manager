@@ -1,0 +1,17 @@
+<div class="flex flex-col w-[32rem] h-[28rem] rounded-lg border-2 shadow-lg">
+  <div class="flex justify-center items-center font-bold text-2xl flex-none" style="height: 75%;">
+    <img [attr.src]="plane.pictureLink" alt="Plane Image" class="object-cover h-full w-full bg-black">
+  </div>
+  <div class="flex ml-3 items-center flex-none border-t" style="height: 25%;">
+    <div class="flex flex-col items-start">
+      <div class="flex gap-x-2 text-lg">
+        <p class="text-gray-500">Registration: </p>
+        <p class="font-semibold">{{ plane.registration }}</p>
+      </div>
+      <div class="flex gap-x-2 text-lg">
+        <p class="text-gray-500">Type: </p>
+        <p class="font-semibold">{{ plane.type }}</p>
+      </div>
+    </div>
+  </div>
+</div>

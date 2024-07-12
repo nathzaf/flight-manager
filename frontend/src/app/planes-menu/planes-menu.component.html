@@ -1,0 +1,19 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-100 pt-8 pb-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div class="flex flex-col w-[32rem] h-[28rem] border-2 rounded-lg shadow-lg">
+      <div class="flex justify-center items-center flex-grow bg-gray-100">
+        <button (click)="showCreatePlaneModal = true"
+                class="flex justify-center items-center w-32 h-32 text-7xl rounded-full bg-gray-300">
+          <div class="mb-4">+</div>
+        </button>
+      </div>
+    </div>
+
+    <div *ngFor="let plane of planes">
+      <app-plane-card [plane]="plane"></app-plane-card>
+    </div>
+  </div>
+</div>
+
+<app-create-plane (close)="onCreatePlaneModalClose()" [show]="showCreatePlaneModal"></app-create-plane>

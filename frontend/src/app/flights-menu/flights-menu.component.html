@@ -1,0 +1,17 @@
+<div class="grid grid-cols-4 w-full">
+  <app-flight-search-filters (reloadFlights)="reloadFlights($event)"
+                             (searchByFlightNumber)="searchByFlightNumber($event)"></app-flight-search-filters>
+
+  <div class="col-span-3" id="flightsList">
+    <div *ngIf="flights && flights.length">
+      <div *ngFor="let flight of flights">
+        <app-flight-list-item [flight]="flight"></app-flight-list-item>
+      </div>
+    </div>
+    <div *ngIf="!flights || !flights.length" class="flex justify-center items-center h-64">
+      <app-spinner [enable]="loading"></app-spinner>
+      <p *ngIf="!loading" class="text-3xl font-bold text-gray-900">No flights found</p>
+    </div>
+  </div>
+</div>
+

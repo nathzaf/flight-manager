@@ -1,0 +1,9 @@
+<div *ngIf="enabled" class="star-rating">
+  <i (click)="handleStarClick(i)" *ngFor="let star of stars; let i = index" [class.fa-star-o]="!star"
+     [class.fa-star]="star"
+     class="fa"></i>
+</div>
+<div *ngIf="!enabled" class="star-rating">
+  <i *ngFor="let star of stars; let i = index" [class.fa-star-o]="!star" [class.fa-star]="star"
+     class="fa"></i>
+</div>
